@@ -1,0 +1,50 @@
+body {
+	background-color: #8167a9;
+}
+
+.wrap {
+	align-items: center;
+	display: flex;
+	height: 100vh;
+	justify-content: center;
+}
+
+.container__inner {
+	position: relative;
+	width: 800px;
+	height: 600px;
+}
+
+.fourofour {
+	font-size: 30rem;
+	color: white;
+	position: absolute;
+	left: 20%;
+}
+.astronaut {
+	animation: spin 20000ms linear infinite;
+	height: 150px;
+	margin: 20% auto;
+	width: auto;
+}
+
+@keyframes spin {
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+a,
+h2,
+h3 {
+	color: white;
+	font-size: 3rem;
+	text-align: center;
+}
+
+a {
+	text-decoration: underline;
+}
+a:hover {
+    color: white;
+}

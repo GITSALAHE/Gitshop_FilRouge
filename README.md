@@ -13,6 +13,7 @@ Boutique en ligne Pour les smartphone : SAMSUNG ET IPHONES.
 [![forthebadge](http://www.trishaomabu.com/wp-content/uploads/2017/09/jquery.png)](https://GitHub.com/GITSALAHE/Gitshop_FilRouge)
 [![forthebadge](https://spaising.com/wp-content/uploads/2019/04/bootstrap.png)](https://GitHub.com/GITSALAHE/Gitshop_FilRouge)
 [![forthebadge](https://cdn.image.st-hatena.com/image/square/056a84a540028747952e2facad5be1c500eb2581/backend=imagemagick;height=100;version=1;width=100/https%3A%2F%2Fcdn-ak.f.st-hatena.com%2Fimages%2Ffotolife%2Fy%2Fyyama1556%2F20180430%2F20180430102044.png)](https://GitHub.com/GITSALAHE/Gitshop_FilRouge)
+[![forthebadge](https://www.blognone.com/sites/default/files/news-thumbnails/stripelogo.png?1423100869)](https://GitHub.com/GITSALAHE/Gitshop_FilRouge)
 [![forthebadge](https://ehikioya.azureedge.net/wp-content/uploads/2019/08/How-To-Install-PHP-Libraries-Without-Composer-100x100.png)](https://GitHub.com/GITSALAHE/Gitshop_FilRouge)
 [![forthebadge](https://sun9-3.userapi.com/c856024/v856024375/1a48a2/VVOiI6p74ZQ.jpg)](https://GitHub.com/GITSALAHE/Gitshop_FilRouge)
 ## How To Run??

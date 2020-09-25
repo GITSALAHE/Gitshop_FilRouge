@@ -1,6 +1,6 @@
 <?php
-include('../app/database/connect.php');
-include('../app/database/db.php');
+include('../app/models/connect.php');
+include('../app/models/db.php');
 include('../app/controllers/category.php');
 include('../app/controllers/product.php');
 include('../app/controllers/cart.php');
@@ -61,7 +61,7 @@ include('../app/controllers/cart.php');
 			<h2><span style="font-weight: 400;">Processing of Personal Data</span></h2>
 <p><span style="font-weight: 400;">Without infringement of personal protection and in accordance to Dutch, European, and international Data Protection Law. Oview </span><span style="font-weight: 400;">has the right to use all data collected for actions or a set of actions, including the collection, recording, organization, storage, updating or modification, retrieval, consultation, use, dissemination by means of transmission, distribution or display in any other form, merging, linking, as well as blocking, erasure or destruction of data (“processing”).</span></p>
 <p><span style="font-weight: 400;">Your personal data is processed according to the Terms and Conditions and Privacy Policy of Mari-Shop.</span></p>
-<p><span style="font-weight: 400;">We will store personal data on a special database in the server of third parties (the “provider”). This provider stores personal data in accordance with the Terms and Conditions of the special agreement between us and this provider. All provider activity related to personal data is regulated by the Terms and Conditions, our Privacy Policy&nbsp;and the provider’s Privacy Policy. The provider guarantees additional security measures to your personal data with relation to the server where all data are saved.</span></p>
+<p><span style="font-weight: 400;">We will store personal data on a special models in the server of third parties (the “provider”). This provider stores personal data in accordance with the Terms and Conditions of the special agreement between us and this provider. All provider activity related to personal data is regulated by the Terms and Conditions, our Privacy Policy&nbsp;and the provider’s Privacy Policy. The provider guarantees additional security measures to your personal data with relation to the server where all data are saved.</span></p>
 <p><span style="font-weight: 400;">Your personal data is protected from unauthorized access also from the third parties through our encryption during transmission, storage, and other processing of personal data to increase the level of safety of your personal data.</span></p>
 <p><span style="font-weight: 400;">With respect to your privacy and following the requirements of data protection, your personal data are used by Oview only after its depersonalization, mixing and modification. The modification of information is the final step of creating statistical reports. </span></p>
 <p><span style="font-weight: 400;">All results of public opinion become public only after the user</span><b>`</b><span style="font-weight: 400;">s voluntarily participation in survey questions, with the option of user</span><b>`</b><span style="font-weight: 400;">s preliminary research into the topic discussed in the different articles.</span></p>

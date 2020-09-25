@@ -11,27 +11,17 @@ $allOrderBackOffice = $order->getDiffNumOrder('orders', 'orderNumber');
 $allOrderOnequantity = $order->getOneProductQte('orders', 'orderNumber');
 $zipCode = '';
 if(isset($_GET['orderNum'])){
-  $orderDetail = $crud->selectAll('orders', ['orderNumber' => $_GET['orderNum']]);
-  $zipCode = $orderDetail[0]['zip'];
-  $timeOrder = date('F j, Y', strtotime($orderDetail[0]['created_at']));
+    $orderDetail = $crud->selectAll('orders', ['orderNumber' => $_GET['orderNum']]);
+    $zipCode = $orderDetail[0]['zip'];
+    $nameCustomer = $orderDetail[0]['firstname'].' ' .$orderDetail[0]['lastname'];
+    $addressCustomer = $orderDetail[0]['address'];
+    $cityCustomer = $orderDetail[0]['city'];
+      $phoneCustomer = $orderDetail[0]['phone_number'];
+      if($orderDetail[0]['stripe'] == 1){$payCustomer = "stripe";}else{$payCustomer = "cash on delivery";}
+    $timeOrder = date('F j, Y', strtotime($orderDetail[0]['created_at']));
 }
 
-'<tr>
-<td align="center"></td>
-<td align="center">10</td>
 
-<td class="cost">&pound;2.56</td>
-<td class="cost">&pound;25.60</td>
-</tr>';
-
-'
-
-
-
-
-
-
-';
 
 if(isset($_GET['invoice'])){
   $dataForinvoice = $crud->selectOne('orders', ['orderNumber' => $_GET['invoice']]);
@@ -40,6 +30,8 @@ if(isset($_GET['invoice'])){
     $line = '';
     $total = 0;
     $productForInvoice = $crud->selectAll('orders', ['orderNumber' => $_GET['invoice']]);
+    $countRow = count($productForInvoice);
+
     foreach($productForInvoice as $productM){
         $productNamePdf = $crud->selectOne('product_history', ['idP' => $productM['idP']]);
         $amount = 0;
@@ -130,7 +122,7 @@ if(isset($_GET['invoice'])){
   <table width="100%">
     <tr>
       <td width="50%" style="color:#0000BB; ">
-      <span style="font-weight: bold; font-size: 14pt;">Maria shop
+      <span style="font-weight: bold; font-size: 14pt;">GITSHOP
       </span>
           <br />Av hassan 2<br />SAFI<br /><span
           style="font-family:dejavusanscondensed;">&#9742;</span> +212649118803</td>

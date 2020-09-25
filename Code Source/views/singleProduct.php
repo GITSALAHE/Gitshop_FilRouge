@@ -1,6 +1,6 @@
 <?php
-include('../app/database/connect.php');
-include('../app/database/db.php');
+include('../app/models/connect.php');
+include('../app/models/db.php');
 include('../app/controllers/category.php');
 include('../app/controllers/product.php');
 include('../app/controllers/cart.php');
@@ -20,7 +20,24 @@ include('../app/controllers/cart.php');
 /*********************************
 5. Home
 *********************************/
-
+li{
+	list-style-type: none;
+}
+.msg {
+    background: #fefefe;
+    color: #666666;
+    font-weight: bold;
+    font-size: small;
+    padding: 12px;
+    padding-left: 16px;
+    border-top: solid 3px #CCCCCC;
+    border-radius: 5px;
+    border-color: #cef2b8;
+    margin-bottom: 10px;
+    -webkit-box-shadow: 0 10px 10px -5px rgba(0,0,0,.08);
+       -moz-box-shadow: 0 10px 10px -5px rgba(0,0,0,.08);
+            box-shadow: 0 10px 10px -5px rgba(0,0,0,.08);
+}
 .home
 {
 	width: 100%;
@@ -531,12 +548,13 @@ padding-right: 0px;
 <div class="product_details">
 
 		<div class="container">
-    <?php include('../app/helpers/flashmessage.php') ?>
+	
+	
 			<div class="row details_row">
-
+			
 				<!-- Product Image -->
 				<div class="col-lg-6">
-            
+				
 				
             <div class="sp-wrap">
          
@@ -548,7 +566,11 @@ padding-right: 0px;
 
 				<!-- Product Content -->
 				<div class="col-lg-6">
+				
 					<div class="details_content">
+					<?php include('../app/helpers/flashmessage.php') ?>
+					<?php include('../app/helpers/messageSuccess.php') ?>
+
 						<div class="details_name"><?php echo $nameProduct?></div>
 						<div class="details_price">$ <?php echo $priceProduct ?></div>
                   <!-- Product Quantity -->
@@ -691,3 +713,4 @@ $('#myCarousel').carousel({
   interval: 3000,
 })
 </script>
+<script>(function(d,t,u,s,e){e=d.getElementsByTagName(t)[0];s=d.createElement(t);s.src=u;s.async=1;e.parentNode.insertBefore(s,e);})(document,'script','//localhost/VSalah/backoffice/livechat/php/app.php?widget-init.js');</script>

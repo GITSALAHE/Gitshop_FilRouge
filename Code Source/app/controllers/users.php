@@ -6,7 +6,7 @@ $table = 'users';
 $errorRegister = array();
 $errorLogin = array();
 
-
+printIt($_POST);
 
 //add new user
 if (isset($_POST['register'])) {
@@ -98,6 +98,7 @@ if(isset($_POST['registerBackoffice'])){
     $errorRegisterBack = validateUserRegisterBackoffice($_POST);
     if(count($errorRegisterBack) == 0){
         unset($_POST['registerBackoffice']);
+        $_POST['password'] = password_hash($_POST['password'], PASSWORD_DEFAULT);
         $_POST['admin'] = isset($_POST['admin']) ? 1 : 0;
         $crud->create($table, $_POST);
         header('location:index.php');

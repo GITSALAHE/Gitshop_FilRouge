@@ -179,3 +179,15 @@ if (isset($_POST['cod'])) {
         </div>
 <?php endif;
 } ?>
+
+<?php
+if (isset($_POST['stripe'])) {
+    if (count($errorCheckout) > 0) : ?>
+
+        <div class="alert alert-danger">
+            <?php foreach ($errorCheckout as $error) : ?>
+                <li><?php echo $error; ?></li>
+            <?php endforeach; ?>
+        </div>
+<?php endif;
+} ?>

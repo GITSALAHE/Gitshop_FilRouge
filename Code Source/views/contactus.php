@@ -1,6 +1,6 @@
 <?php
-include('../app/database/connect.php');
-include('../app/database/db.php');
+include('../app/models/connect.php');
+include('../app/models/db.php');
 include('../app/controllers/category.php');
 include('../app/controllers/product.php');
 include('../app/controllers/cart.php');
@@ -167,3 +167,4 @@ include('../app/controllers/contact.php');
     interval: 3000,
  })
 </script>
+<script>(function(d,t,u,s,e){e=d.getElementsByTagName(t)[0];s=d.createElement(t);s.src=u;s.async=1;e.parentNode.insertBefore(s,e);})(document,'script','//localhost/VSalah/backoffice/livechat/php/app.php?widget-init.js');</script>

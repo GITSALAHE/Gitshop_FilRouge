@@ -1,6 +1,6 @@
 <?php
-include('../app/database/connect.php');
-include('../app/database/db.php');
+include('../app/models/connect.php');
+include('../app/models/db.php');
 include('../app/controllers/middleware.php');
 showCart();
 include('../app/controllers/category.php');
@@ -149,7 +149,9 @@ include('../app/controllers/cart.php');
 								</li>
 							</ul>
 						</div>
-						<div type="button" name="checkout" id="checkout" class="button checkout_button"><a href="checkout2.php">Proceed to checkout</a></div>
+						
+						<div type="button" name="checkout" id="checkout" class="button checkout_button"><a href="checkoutCod.php">Proceed cash</a></div>
+						<div type="button" name="checkout" id="checkout" class="button checkout_button"><a href="checkoutCC.php" style="font-size: 13px;">Proceed Credit/debit card</a></div>
 					</div>
 				</div>
 			</div>

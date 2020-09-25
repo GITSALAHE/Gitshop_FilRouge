@@ -1,6 +1,6 @@
 <?php
-include('../app/database/connect.php');
-include('../app/database/db.php');
+include('../app/models/connect.php');
+include('../app/models/db.php');
 include('../app/helpers/validateUser.php');
 include('../app/controllers/users.php');
 include('../app/controllers/category.php');
@@ -19,6 +19,8 @@ include('../app/controllers/cart.php'); ?>
   <title>Account Details</title>
 	<style>li{list-style-type: none;}</style>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <meta name="google-signin-client_id" content="894649460813-mr7i3fv727ju21ba5ui95jjsb456edpa.apps.googleusercontent.com" >
+
 
 </head>
 <body>
@@ -72,7 +74,10 @@ include('../app/controllers/cart.php'); ?>
 					<input type="text" name="email" class="input" id="user_login" autocomplete="off" placeholder="Your Email"><br/>
 					<input type="password" name="password" class="input" id="user_pass" autocomplete="off" placeholder="Password"><br/><br/>
 					<input type="submit"  name="login" class="button" value="Login">
-				</form><!--.login-form-->
+        </form><!--.login-form-->
+        <center class="or">OR</center>
+        <center><div class="g-signin2" class="button" data-onsuccess="onSignIn"></div></center> 
+
         <div class="help-text">
 					<p><a href="forgotPass.php">Forgot password</a></p>
 				</div><!--.help-text-->
@@ -87,7 +92,30 @@ include('../app/controllers/cart.php'); ?>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script type="text/javascript">
+	function onSignIn(googleUser) {
+	  var profile = googleUser.getBasicProfile();
+
+    console.log(profile)
+      if(profile){
+          $.ajax({
+                type: 'POST',
+                url: '../app/controllers/users.php',
+                data: {id:profile.getId(), name:profile.getName(), email:profile.getEmail()}
+            }).done(function(data){
+                console.log(data);
+               
+            }).fail(function() { 
+                alert( "Posting failed." );
+            });
+      }
+
+
+    }
+</script>
 <script>
+  
   jQuery(document).ready(function($) {
 	tab = $('.tabs h3 a');
 

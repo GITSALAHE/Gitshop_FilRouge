@@ -1,222 +1,100 @@
-<?php
-include('../app/database/connect.php');
-include('../app/database/db.php');
+<?php 
+include('../app/models/connect.php');
+include('../app/models/db.php');
 include('../app/controllers/middleware.php');
 alreadyLoggedAdmin();
 include('../app/helpers/validateUser.php');
 include('../app/controllers/users.php');
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="Description" content="Enter your description here" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <title>Login admin</title>
-    <style>
-        body {
-            color: #000;
-            overflow-x: hidden;
-            height: 100%;
-            background-image: linear-gradient(to right, #D500F9, #FFD54F);
-            
-        }
 
-        input,
-        textarea {
-            background-color: #F3E5F5;
-            border-radius: 50px !important;
-            padding: 12px 15px 12px 15px !important;
-            width: 100%;
-            box-sizing: border-box;
-            border: none !important;
-            border: 1px solid #F3E5F5 !important;
-            font-size: 16px !important;
-            color: #000 !important;
-            font-weight: 400
-        }
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-        input:focus,
-        textarea:focus {
-            -moz-box-shadow: none !important;
-            -webkit-box-shadow: none !important;
-            box-shadow: none !important;
-            border: 1px solid #D500F9 !important;
-            outline-width: 0;
-            font-weight: 400
-        }
+  <title>GITSHOP | Backoffice</title>
 
-        button:focus {
-            -moz-box-shadow: none !important;
-            -webkit-box-shadow: none !important;
-            box-shadow: none !important;
-            outline-width: 0
-        }
+  <!-- Custom fonts for this template-->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
-        .card {
-            border-radius: 0;
-            border: none
-        }
+  <!-- Custom styles for this template-->
+  <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
-        .card1 {
-            width: 50%;
-            padding: 40px 30px 10px 30px
-        }
-
-        .card2 {
-            width: 50%;
-            background-image: linear-gradient(to right, #FFD54F, #D500F9)
-        }
-
-        #logo {
-
-            height: 60px
-        }
-
-        .heading {
-            margin-bottom: 60px !important
-        }
-
-        ::placeholder {
-            color: #000 !important;
-            opacity: 1
-        }
-
-        :-ms-input-placeholder {
-            color: #000 !important
-        }
-
-        ::-ms-input-placeholder {
-            color: #000 !important
-        }
-
-        .form-control-label {
-            font-size: 12px;
-            margin-left: 15px
-        }
-
-        .msg-info {
-            padding-left: 15px;
-            margin-bottom: 30px
-        }
-
-        .btn-color {
-            border-radius: 50px;
-            color: #fff;
-            background-image: linear-gradient(to right, #FFD54F, #D500F9);
-            padding: 15px;
-            cursor: pointer;
-            border: none !important;
-            margin-top: 40px
-        }
-
-        .btn-color:hover {
-            color: #fff;
-            background-image: linear-gradient(to right, #D500F9, #FFD54F)
-        }
-
-        .btn-white {
-            border-radius: 50px;
-            color: #D500F9;
-            background-color: #fff;
-            padding: 8px 40px;
-            cursor: pointer;
-            border: 2px solid #D500F9 !important
-        }
-
-        .btn-white:hover {
-            color: #fff;
-            background-image: linear-gradient(to right, #FFD54F, #D500F9)
-        }
-
-        a {
-            color: #000
-        }
-
-        a:hover {
-            color: #000
-        }
-
-        .bottom {
-            width: 100%;
-            margin-top: 50px !important
-        }
-
-        .sm-text {
-            font-size: 15px
-        }
-
-        @media screen and (max-width: 992px) {
-            .card1 {
-                width: 100%;
-                padding: 40px 30px 10px 30px
-            }
-
-            .card2 {
-                width: 100%
-            }
-
-            .right {
-                margin-top: 100px !important;
-                margin-bottom: 100px !important
-            }
-        }
-
-        @media screen and (max-width: 768px) {
-            .container {
-                padding: 10px !important
-            }
-
-            .card2 {
-                padding: 50px
-            }
-
-            .right {
-                margin-top: 50px !important;
-                margin-bottom: 50px !important
-            }
-        }
-    </style>
 </head>
 
-<body>
-    <div class="container px-4 py-5">
-        <div class="card card0">
-            <div class="d-flex flex-lg-row flex-column-reverse">
-                <div class="card card1">
-                    <div class="row justify-content-center my-auto">
-                        <form method="post" action="">
-                            <div class="col-md-8 col-10 my-5">
-                                <div class="row justify-content-center px-3 mb-3"> <img id="logo" src="../assets/img/your-logo__7_-removebg-preview.png"> </div>
-                                <h3 class="mb-5 text-center heading">We are MariaShop</h3>
-                                <?php include('../app/helpers/flashmessage.php') ?>
-                                <h6 class="msg-info">Please login to your account</h6>
-                                <div class="form-group"> <label class="form-control-label text-muted">Username</label> <input type="text" id="email" name="username" placeholder="your username" class="form-control"> </div>
-                                <div class="form-group"> <label class="form-control-label text-muted">Password</label> <input type="password" id="psw" name="password" placeholder="Password" class="form-control"> </div>
-                                <div class="row justify-content-center my-3 px-3"> <button type="submit" name="loginAdmin" class="btn-block btn-color">Login</button> </div>
-                            </div>
-                        </form>
+<body class="" style="background:#8167A9">
 
-                    </div>
+  <div class="container">
 
-                </div>
-                <div class="card card2">
-                    <div class="my-auto mx-md-5 px-md-5 right">
-                        <h3 class="text-white">We are more than just a company :</h3>
-                        <h2 class="text-white">Space Adminstration</h1>
+    <!-- Outer Row -->
+    <div class="row justify-content-center">
+
+      <div class="col-xl-10 col-lg-12 col-md-9">
+     
+        <div class="card o-hidden border-0 shadow-lg my-5">
+          <div class="card-body p-0">
+            <!-- Nested Row within Card Body -->
+           
+            <div class="row" style="height: 500px;">
+              <div class="col-lg-6 d-none d-flex">
+                <img src="../assets/img/ban.jpg" style="    width: 100%;" alt="">
+              </div>
+              <div class="col-lg-6">
+                <div class="p-5">
+                  <div class="text-center">
+                  <?php include('../app/helpers/flashMessage.php') ?>
+
+                    <h1 class="h4 text-gray-900 mb-4">Backoffice "GITSHOP"</h1>
+                  </div>
+                
+                  <form class="user" method="POST">
+                    <div class="form-group">
+                      <input type="text" name="username" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Put your username...">
                     </div>
+                    <div class="form-group">
+                      <input type="password" name="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                      <div class="custom-control custom-checkbox small">
+                        <input type="checkbox" class="custom-control-input" id="customCheck">
+                        <label class="custom-control-label" for="customCheck">Remembre Me</label>
+                      </div>
+                    </div>
+                    <button type="submit" name="loginAdmin" class="btn btn-user btn-maria btn-block text-white">Log In</button>
+                    
+                  </form>
+
+                  <hr>
+                
                 </div>
+              </div>
             </div>
+          </div>
         </div>
+
+      </div>
+
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+  </div>
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="js/sb-admin-2.min.js"></script>
+
 </body>
 
 </html>

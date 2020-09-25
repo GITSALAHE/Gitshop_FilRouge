@@ -1,6 +1,6 @@
-<?php 
-include('../../app/database/connect.php');
-include('../../app/database/db.php');
+<?php
+include('../../app/models/connect.php');
+include('../../app/models/db.php');
 include('../../app/controllers/orders.php')
 
 ?>
@@ -8,192 +8,295 @@ include('../../app/controllers/orders.php')
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="Description" content="Enter your description here" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <link rel="stylesheet" href="order.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <title>Backoffice | Orders </title>
+    <style>
+        a {
+            text-decoration: none !important;
+        }
+    </style>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Tableau de bord |GITSHOP</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="../css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="../vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+
+
 </head>
 
-<body>
-    <div class="d-flex" id="wrapper">
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
 
         <!-- Sidebar -->
-        <div class="bg-dark border-right" id="sidebar-wrapper">
-            <div class="sidebar-heading text-light">Maria shop </div>
-            <div class="list-group list-group-flush">
-                <a href="../dashboard.php"
-                    class="list-group-item list-group-item-action bg-dark text-primary">Dashboard</a>
-                <a href="../category" class="list-group-item list-group-item-action bg-dark text-primary">Categories</a>
-                <a href="" class="list-group-item list-group-item-action bg-dark active">Products</a>
-                <a href="../orders" class="list-group-item list-group-item-action bg-dark text-primary">orders</a>
-                <a href="../users" class="list-group-item list-group-item-action bg-dark text-primary">Users</a>
-                <a href="../livechat" class="list-group-item list-group-item-action bg-dark text-primary">LIVE CHAT</a>
+        <!-- Sidebar -->
+        <ul style="background:#8167A9" class="navbar-nav  sidebar sidebar-dark accordion" id="accordionSidebar">
 
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="../dashboard.php">
+                <div class="sidebar-brand-text mx-3">GITSHOP</div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item active">
+                <a class="nav-link" href="../dashboard.php">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                GITSHOP
             </div>
-        </div>
-        <!-- /#sidebar-wrapper -->
 
-        <!-- Page Content -->
-        <div id="page-content-wrapper">
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link " href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Manage your store</span>
+                </a>
+                <div id="collapsePages" class="collapse show" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Options:</h6>
+                        <a class="collapse-item" href="../category">Category</a>
+                        <a class="collapse-item" href="../products">Products</a>
 
-            <?php include('../../app/includes/headAdmin.php');
-    include('../../app/helpers/messageSuccess.php');
-    ?>
+                        <a class="collapse-item" style="background-color: #eaecf4;" href="index.php">Orders</a>
+                    </div>
+                </div>
+            </li>
 
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-<div class="container mt-100" style="margin-top: 170px;">
-		<div class="col-sm-10 col-sm-offset-1">
-			<div class="widget-box">
-				<div class="widget-header widget-header-large">
-					<h3 class="widget-title grey lighter">
-						<i class="ace-icon fa fa-leaf green"></i>
-						Eshop
-					</h3>
 
-					<div class="widget-toolbar no-border invoice-info">
-						<span class="invoice-info-label">Invoice:</span>
-						<span class="red">#<?php echo $_GET['orderNum'] ?></span>
+            <!-- Nav Item - Tables -->
+            <li class="nav-item">
+                <a class="nav-link" href="../users">
+                    <i class="fas fa-fw fa-users"></i>
+                    <span>Users</span></a>
+            </li>
+            <li class="nav-item">
+        <a class="nav-link" href="../livechat">
+          <i class="fas fa-fw fa-comment-alt"></i>
+          <span>Live Chat</span></a>
+      </li>
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
 
-						<br>
-						<span class="invoice-info-label">Date:</span>
-						<span class="blue"><?php echo $timeOrder ?></span>
-					</div>
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
 
-					<div class="widget-toolbar hidden-480">
-						<a href="showOrder.php?invoice=<?php echo $_GET['orderNum'] ?>">
-							<i class="ace-icon fa fa-print"></i>
-						</a>
-					</div>
-				</div>
+        </ul>
+        <div id="content-wrapper" class="d-flex flex-column">
 
-				<div class="widget-body">
-					<div class="widget-main padding-24">
-						<div class="row">
-							<div class="col-sm-6">
-								<div class="row">
-									<div class="col-xs-11 label label-lg label-info arrowed-in arrowed-right">
-										<b>Costumer Info</b>
-									</div>
-								</div>
+            <!-- Main Content -->
+            <div id="content">
 
-								<div>
-									<ul class="list-unstyled spaced">
-										<li>
-											<i class="ace-icon fa fa-caret-right blue"></i>Street, City
-										</li>
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
-										<li>
-											<i class="ace-icon fa fa-caret-right blue"></i>Zip Code : <?php echo $zipCode ?>
-										</li>
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
 
-										<li>
-											<i class="ace-icon fa fa-caret-right blue"></i>State, Country
-										</li>
 
-										<li>
-											<i class="ace-icon fa fa-caret-right blue"></i>
-Phone:
-											<b class="red">111-111-111</b>
-										</li>
 
-										<li class="divider"></li>
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
 
-										<li>
-											<i class="ace-icon fa fa-caret-right blue"></i>
-											Paymant Info
-										</li>
-									</ul>
-								</div>
-							</div><!-- /.col -->
 
-						
-						</div><!-- /.row -->
 
-						<div class="space"></div>
 
-						<div>
-							<table class="table table-striped table-bordered">
-								<thead>
-									<tr>
-										<th class="center">ID</th>
+
+
+
+                        <div class="topbar-divider d-none d-sm-block"></div>
+
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small text-capitalize">
+                                    <?php echo $_SESSION['Admin'] ?></span>
+                                <img class="img-profile rounded-circle" src="../img/avatar.png">
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                            <a class="dropdown-item" href="../users/edit.php?idU_edit=<?php echo $_SESSION['idU'] ?>">
+            <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+            Profil
+          </a>
+
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    LogOut
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <!-- End of Sidebar -->
+
+                <!-- Content Wrapper -->
+
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+                  
+
+                    <div class="card shadow mb-4">
+                
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary mb-2">Manage Orders</h6>
+                            <a href="showOrder.php?invoice=<?php echo $_GET['orderNum'] ?>" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate invoice</a>
+                        </div>
+                        <div class="card-body">
+                            <ul style="list-style-type: none;">
+                                <li>Full name customer : <b style="text-transform: capitalize;color:black"><?php echo $nameCustomer ?></b></li>
+                                <li>Address : <b style="text-transform: capitalize;color:black"><?php echo $addressCustomer ?></b></li>
+                                <li>Zip code : <b style="text-transform: capitalize;color:black"><?php echo $zipCode ?></b></li>
+                                <li>City : <b style="text-transform: capitalize;color:black"><?php echo $cityCustomer ?></b></li>
+                                <li>Number phone : <b style="text-transform: capitalize;color:black"><?php echo $phoneCustomer ?></b></li>
+                                <li>Payment : <b style="text-transform: capitalize;color:black"><?php echo $payCustomer ?></b></li>
+                                <li>Ordered at : <b style="text-transform: capitalize;color:black"><?php echo $timeOrder ?></b></li>
+                                
+                                
+
+                            </ul>
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                        <th>ID</th>
 										<th>Product</th>
-										<th class="hidden-xs">Description</th>
-										<th class="hidden-480">Quantite</th>
+										<th>Description</th>
+										<th>Quantite</th>
 										<th>Total</th>
-									</tr>
-								</thead>
-
-								<tbody>
-                                     <?php $totalOrder = 0; 
+                                        </tr>
+                                    </thead>
+                                   
+                                    <tbody>
+                                    <?php $totalOrder = 0; 
                                      $totalUnite = 0;
                                      ?>
-                                    <?php foreach($orderDetail as $orderD): 
-                                        
-                                        ?>
-									<tr>
-										<td class="center"><?php echo $_GET['orderNum'] ?></td>
+                                        <?php foreach($orderDetail as $orderD): ?>
 
-										<td>
-											<a href="#"><?php $prname =  $crud->selectOne('product_history', ['idP' => $orderD['idP']]); echo $prname['nameProduct']?></a>
-										</td>
-										<td class="hidden-xs">
-											<?php echo $prname['description'] ?>
-										</td>
-										<td class="hidden-480"> <?php echo $orderD['qte'] . ' unite';?> </td>
-										<td>$ <?php echo $totalUnite = ($orderD['qte'] * $prname['Price']) ?><?php $totalOrder = $totalOrder + ($orderD['qte'] * $prname['Price']); ?></td>
-									</tr>
-                                    <?php endforeach; ?>
-									
-								</tbody>
-							</table>
-						</div>
 
-						<div class="hr hr8 hr-double hr-dotted"></div>
+                                            <tr>
+                                                <td> <?php echo $_GET['orderNum'] ?></td>
+                                                <td><a href="#"><?php $prname =  $crud->selectOne('product_history', ['idP' => $orderD['idP']]); echo $prname['nameProduct']?></a></td>
+                                                <td><?php echo $prname['description'] ?></td>
+                                                <td>
+                                                <?php echo $orderD['qte'] . ' unite';?> 
+                                                </td>
+                                                <td> <?php echo $totalUnite = ($orderD['qte'] * $prname['Price']) ?><?php $totalOrder = $totalOrder + ($orderD['qte'] * $prname['Price']); ?></td>
+                                            </tr>
+                                        <?php endforeach; ?>
+                                        <tfoot>
+                                        <tr>
+                                        <th>ID</th>
+										<th>Product</th>
+										<th>Description</th>
+										<th>Quantite</th>
+										<th>All Total: <span style="color:red"><?php echo $totalOrder ?></span></th>
 
-						<div class="row">
-							
-                            <div class="col-sm-7 pull-left"> Extra Information </div>
-                            <div class="col-sm-5 pull-right">
-								<h4 class="pull-right">
-									Total amount :
-									<span class="red">$ <?php echo $totalOrder ?></span>
-								</h4>
-							</div>
-						</div>
 
-						<div class="space-6"></div>
-						
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+                                        </tr>
+                                    </tfoot>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; GITSHOP 2020</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
 
         </div>
-        <!-- /#page-content-wrapper -->
-
-
-
-
-
+        <!-- End of Content Wrapper -->
 
     </div>
-    <!-- /#wrapper -->
+    <!-- End of Page Wrapper -->
 
-    <!-- Bootstrap core JavaScript -->
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <a class="btn btn-maria" href="../../app/controllers/logoutAdmin.php">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="../js/sb-admin-2.min.js"></script>
+
+
+    <!-- Page level plugins -->
+    <script src="../vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="../vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="../js/demo/datatables-demo.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="../js/demo/chart-area-demo.js"></script>
+    <script src="../js/demo/chart-pie-demo.js"></script>
+
 </body>
 
 </html>

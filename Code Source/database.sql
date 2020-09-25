@@ -2,10 +2,10 @@
 -- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Hôte : 127.0.0.1
--- Généré le : mar. 01 sep. 2020 à 00:04
--- Version du serveur :  10.4.13-MariaDB
--- Version de PHP : 7.4.8
+-- Host: 127.0.0.1
+-- Generation Time: Sep 25, 2020 at 04:41 PM
+-- Server version: 10.4.13-MariaDB
+-- PHP Version: 7.4.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `shop`
+-- Database: `shop`
 --
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `cart`
+-- Table structure for table `cart`
 --
 
 CREATE TABLE `cart` (
@@ -36,16 +36,16 @@ CREATE TABLE `cart` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `cart`
+-- Dumping data for table `cart`
 --
 
 INSERT INTO `cart` (`idCart`, `idP`, `idU`, `qte`, `idSize`) VALUES
-(98, 10, 6, '1', 10);
+(131, 10, 31, '1', 10);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `category`
+-- Table structure for table `category`
 --
 
 CREATE TABLE `category` (
@@ -54,17 +54,18 @@ CREATE TABLE `category` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `category`
+-- Dumping data for table `category`
 --
 
 INSERT INTO `category` (`idC`, `nameCategory`) VALUES
 (10, 'Samsung'),
-(12, 'IPhone');
+(12, 'IPhone'),
+(21, 'HUWAEI');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `mirrormx_customer_chat_data`
+-- Table structure for table `mirrormx_customer_chat_data`
 --
 
 CREATE TABLE `mirrormx_customer_chat_data` (
@@ -77,7 +78,7 @@ CREATE TABLE `mirrormx_customer_chat_data` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `mirrormx_customer_chat_department`
+-- Table structure for table `mirrormx_customer_chat_department`
 --
 
 CREATE TABLE `mirrormx_customer_chat_department` (
@@ -87,7 +88,7 @@ CREATE TABLE `mirrormx_customer_chat_department` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Déchargement des données de la table `mirrormx_customer_chat_department`
+-- Dumping data for table `mirrormx_customer_chat_department`
 --
 
 INSERT INTO `mirrormx_customer_chat_department` (`id`, `name`, `description`) VALUES
@@ -96,7 +97,7 @@ INSERT INTO `mirrormx_customer_chat_department` (`id`, `name`, `description`) VA
 -- --------------------------------------------------------
 
 --
--- Structure de la table `mirrormx_customer_chat_message`
+-- Table structure for table `mirrormx_customer_chat_message`
 --
 
 CREATE TABLE `mirrormx_customer_chat_message` (
@@ -110,7 +111,7 @@ CREATE TABLE `mirrormx_customer_chat_message` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Déchargement des données de la table `mirrormx_customer_chat_message`
+-- Dumping data for table `mirrormx_customer_chat_message`
 --
 
 INSERT INTO `mirrormx_customer_chat_message` (`id`, `from_id`, `to_id`, `body`, `datetime`, `talk_id`, `extra`) VALUES
@@ -155,7 +156,7 @@ INSERT INTO `mirrormx_customer_chat_message` (`id`, `from_id`, `to_id`, `body`, 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `mirrormx_customer_chat_shared_file`
+-- Table structure for table `mirrormx_customer_chat_shared_file`
 --
 
 CREATE TABLE `mirrormx_customer_chat_shared_file` (
@@ -169,7 +170,7 @@ CREATE TABLE `mirrormx_customer_chat_shared_file` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Déchargement des données de la table `mirrormx_customer_chat_shared_file`
+-- Dumping data for table `mirrormx_customer_chat_shared_file`
 --
 
 INSERT INTO `mirrormx_customer_chat_shared_file` (`id`, `original_name`, `name`, `type`, `size`, `upload_id`, `password`) VALUES
@@ -178,7 +179,7 @@ INSERT INTO `mirrormx_customer_chat_shared_file` (`id`, `original_name`, `name`,
 -- --------------------------------------------------------
 
 --
--- Structure de la table `mirrormx_customer_chat_talk`
+-- Table structure for table `mirrormx_customer_chat_talk`
 --
 
 CREATE TABLE `mirrormx_customer_chat_talk` (
@@ -191,7 +192,7 @@ CREATE TABLE `mirrormx_customer_chat_talk` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Déchargement des données de la table `mirrormx_customer_chat_talk`
+-- Dumping data for table `mirrormx_customer_chat_talk`
 --
 
 INSERT INTO `mirrormx_customer_chat_talk` (`id`, `state`, `department_id`, `owner`, `last_activity`, `extra`) VALUES
@@ -210,7 +211,7 @@ INSERT INTO `mirrormx_customer_chat_talk` (`id`, `state`, `department_id`, `owne
 -- --------------------------------------------------------
 
 --
--- Structure de la table `mirrormx_customer_chat_upload`
+-- Table structure for table `mirrormx_customer_chat_upload`
 --
 
 CREATE TABLE `mirrormx_customer_chat_upload` (
@@ -223,7 +224,7 @@ CREATE TABLE `mirrormx_customer_chat_upload` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Déchargement des données de la table `mirrormx_customer_chat_upload`
+-- Dumping data for table `mirrormx_customer_chat_upload`
 --
 
 INSERT INTO `mirrormx_customer_chat_upload` (`id`, `message_id`, `state`, `files_info`, `size`, `progress`) VALUES
@@ -232,7 +233,7 @@ INSERT INTO `mirrormx_customer_chat_upload` (`id`, `message_id`, `state`, `files
 -- --------------------------------------------------------
 
 --
--- Structure de la table `mirrormx_customer_chat_user`
+-- Table structure for table `mirrormx_customer_chat_user`
 --
 
 CREATE TABLE `mirrormx_customer_chat_user` (
@@ -247,7 +248,7 @@ CREATE TABLE `mirrormx_customer_chat_user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Déchargement des données de la table `mirrormx_customer_chat_user`
+-- Dumping data for table `mirrormx_customer_chat_user`
 --
 
 INSERT INTO `mirrormx_customer_chat_user` (`id`, `name`, `mail`, `password`, `image`, `info`, `roles`, `last_activity`) VALUES
@@ -267,7 +268,7 @@ INSERT INTO `mirrormx_customer_chat_user` (`id`, `name`, `mail`, `password`, `im
 -- --------------------------------------------------------
 
 --
--- Structure de la table `mirrormx_customer_chat_user_department`
+-- Table structure for table `mirrormx_customer_chat_user_department`
 --
 
 CREATE TABLE `mirrormx_customer_chat_user_department` (
@@ -276,7 +277,7 @@ CREATE TABLE `mirrormx_customer_chat_user_department` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Déchargement des données de la table `mirrormx_customer_chat_user_department`
+-- Dumping data for table `mirrormx_customer_chat_user_department`
 --
 
 INSERT INTO `mirrormx_customer_chat_user_department` (`user_id`, `department_id`) VALUES
@@ -286,7 +287,7 @@ INSERT INTO `mirrormx_customer_chat_user_department` (`user_id`, `department_id`
 -- --------------------------------------------------------
 
 --
--- Structure de la table `orders`
+-- Table structure for table `orders`
 --
 
 CREATE TABLE `orders` (
@@ -306,24 +307,31 @@ CREATE TABLE `orders` (
   `calculated` tinyint(4) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `price` varchar(255) NOT NULL,
-  `paypal` tinyint(4) NOT NULL,
+  `stripe` tinyint(4) NOT NULL,
   `cod` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `orders`
+-- Dumping data for table `orders`
 --
 
-INSERT INTO `orders` (`idOrder`, `orderNumber`, `status`, `firstname`, `lastname`, `address`, `zip`, `city`, `phone_number`, `email`, `idU`, `idP`, `qte`, `calculated`, `created_at`, `price`, `paypal`, `cod`) VALUES
-(70, 'Mshop', 'pending', 'SALAHEDDINE', 'BOUANBA', 'lot 161 AL MANAR YASSAMIN', '40000', 'Marrakesh', '0646274243', 'salah.bouanba2@gmail.com', 6, 35, '2', 0, '2020-08-28 10:57:18', '4.798', 0, 1),
-(71, 'Mshop70', 'pending', 'SALAHEDDINE', 'BOUANBA', 'lot 161 AL MANAR YASSAMIN', '40000', 'Settat', '0646274243', 'salah.bouanba2@gmail.com', 6, 38, '1', 0, '2020-08-28 10:58:41', '1.999', 0, 1),
-(72, 'Mshop70', 'pending', 'SALAHEDDINE', 'BOUANBA', 'lot 161 AL MANAR YASSAMIN', '40000', 'Settat', '0646274243', 'salah.bouanba2@gmail.com', 6, 33, '1', 0, '2020-08-28 10:58:41', '1.299', 0, 1),
-(73, 'Mshop72', 'shipped', 'okmk', 'ksdzede', '12 Rue omam quartie hopital', '042424', 'Safi', '0644569834', 'mariem@gmail.com', 27, 42, '2', 0, '2020-08-28 14:09:25', '2.698', 0, 1);
+INSERT INTO `orders` (`idOrder`, `orderNumber`, `status`, `firstname`, `lastname`, `address`, `zip`, `city`, `phone_number`, `email`, `idU`, `idP`, `qte`, `calculated`, `created_at`, `price`, `stripe`, `cod`) VALUES
+(92, 'Mshop', 'pending', 'salaheddine', 'bouanba', 'LOT 161', '40000', 'Marrakesh', '0646274243', 'gitshopllc@gmail.com', 31, 10, '2', 0, '2020-09-18 15:01:49', '1198', 1, 0);
+
+--
+-- Triggers `orders`
+--
+DELIMITER $$
+CREATE TRIGGER `soustraction_quantite` AFTER INSERT ON `orders` FOR EACH ROW BEGIN 
+   UPDATE product SET product.Qte = product.Qte - new.qte where product.idP=new.idP; 
+END
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `password_reset`
+-- Table structure for table `password_reset`
 --
 
 CREATE TABLE `password_reset` (
@@ -336,7 +344,7 @@ CREATE TABLE `password_reset` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `product`
+-- Table structure for table `product`
 --
 
 CREATE TABLE `product` (
@@ -351,30 +359,31 @@ CREATE TABLE `product` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `product`
+-- Dumping data for table `product`
 --
 
 INSERT INTO `product` (`idP`, `nameProduct`, `Price`, `Qte`, `Image`, `Image2`, `description`, `idC`) VALUES
-(10, 'Samsung Galaxy A51 Black ', '599.00', '108', '1598375008_test1.png', '1598375008_yes.png', '<p><span style=\"color: #606060; font-family: Roboto, sans-serif; font-size: 14px; background-color: #ffffff;\">The A51 Infinity-O Display optimises visual symmetry. Now you can game, watch, surf, and multi-task without interruption on a 6.5 inch FHD+ wides', 10),
-(32, 'Samsung Galaxy S20+ Cloud Blue', '1.699', '100', '1598375740_S1.png', '1598375740_S2.png', '<p><span style=\"color: #606060; font-family: Roboto, sans-serif; font-size: 14px; background-color: #ffffff;\">A massive leap forward in resolution and zoom for mobile photography.</span></p>', 10),
-(33, 'Samsung Galaxy S20 Cloud Pink', '1.299', '100', '1598376084_S3.png', '1598376084_S4.png', '<p><span style=\"color: #606060; font-family: Roboto, sans-serif; font-size: 14px; background-color: #ffffff;\">A massive leap forward in resolution and zoom for mobile photography.</span></p>\r\n<ul class=\"tox-checklist\">\r\n<li><span style=\"color: #606060; fo', 10),
-(34, 'Samsung Galaxy S10', '1.299', '100', '1598376568_S5.png', '1598376568_S6.png', '<p>&nbsp;</p>\r\n<p>The result of 10 years of pioneering mobile firsts <br />the next generation of Galaxy arrived.</p>\r\n<ul class=\"tox-checklist\">\r\n<li>6.1Dynamic AMOLED display</li>\r\n<li>2.7GHZ Octa core processor</li>\r\n<li>16 MP Ultra-Wide+ 12MP wid</li>', 10),
-(35, 'Samsung Galaxy Z Flip Mirror Purple', '2.399', '100', '1598377280_S7.png', '1598377280_S8.png', '<p>&nbsp;</p>\r\n<p>Meet the full screen phone that folds to fit in your pocket</p>\r\n<ul class=\"tox-checklist\">\r\n<li>12MP Super speed Dual Pixel F1.8 Camera</li>\r\n<li>9W Wireless Charging with Wireless PowerShare</li>\r\n<li>6.7\"FHD=Dynamic AMOLED Display</li', 10),
-(36, 'Samsung Galaxy Note 20 Mystic Green', '1.899', '100', '1598378187_S10.png', '1598378187_S9.png', '<p>Introducing the phone with the most versatile S Pen yet, PC-level performance, and Pro-grade 8K Video camera</p>\r\n<ul class=\"tox-checklist\">\r\n<li>12MP Ultra Wide + 12MP Wide + 6\'MP Telephoto Rear Cameras</li>\r\n<li>6.7\"FHD+ Super AMOLED</li>\r\n<li>Up to ', 10),
-(37, 'Apple iPhone 11', '1.449', '100', '1598378925_I.png', '1598378925_I2.png', '<p>Shoot 4K video, beautiful portraits and sweeping landscapes with the all-new dual-camera system.</p>\r\n<ul class=\"tox-checklist\">\r\n<li>6.1-inch Liquid Retina HD LCD display</li>\r\n<li>Water and dust resistance (2 metres for up to 30 minutes, IP68)</li>\r\n<li>Dual-camera system with 12-megapixel Ultra Wide and Wide cameras; Night mode, Portrait mode, and 4K video at up to 60 fps</li>\r\n<li>12-megapixel TrueDepth front camera with Portrait mode, 4K video and slow motion</li>\r\n<li>Face ID for secure authentication and Apple Pay</li>\r\n<li>A13 Bionic chip with third-generation Neural Engine</li>\r\n<li>Fast-charge-capable</li>\r\n<li>Wireless charging4</li>\r\n</ul>', 12),
-(38, 'Apple iPhone 11 Pro Max Midnight Green', '1.999', '100', '1598379685_I3.png', '1598379685_I4.png', '<p>Shoot 4K video, beautiful portraits and sweeping landscapes with the all-new dual-camera system.</p>\r\n<ul class=\"tox-checklist\">\r\n<li>6.1-inch Liquid Retina HD LCD display</li>\r\n<li>Water and dust resistance (2 metres for up to 30 minutes, IP68)</li>\r\n<li>Dual-camera system with 12-megapixel Ultra Wide and Wide cameras; Night mode, Portrait mode, and 4K video at up to 60 fps</li>\r\n<li>12-megapixel TrueDepth front camera with Portrait mode, 4K video and slow motion</li>\r\n<li>Face ID for secure authentication and Apple Pay</li>\r\n<li>A13 Bionic chip with third-generation Neural Engine</li>\r\n<li>Fast-charge-capable</li>\r\n<li>Wireless charging4</li>\r\n</ul>', 12),
-(39, 'Apple iPhone SE White', '1.099', '100', '1598380113_I5.png', '1598380113_I6.png', '<p>Lots to love. Less to spend.</p>\r\n<ul class=\"tox-checklist\">\r\n<li>4.7-inch (diagonal) widescreen LCD</li>\r\n<li>12-megapixel Wide camera</li>\r\n<li>Portrait mode with advanced bokeh and Depth Control</li>\r\n<li>Water and dust resistance</li>\r\n<li>TouchID ', 12),
-(40, 'Apple iPhone 11 Yellow', '1.349', '100', '1598380839_i7.png', '1598380839_I8.png', '<p>Shoot amazing videos and photos with the Ultra Wide, Wide and Telephoto cameras.&nbsp;</p>\r\n<ul class=\"tox-checklist\">\r\n<li>5.8-inch Super Retina XDR OLED display</li>\r\n<li>Water and dust resistance (4 metres for up to 30 minutes, IP68)</li>\r\n<li>Triple-camera system with 12-megapixel Ultra Wide, Wide and Telephoto cameras; Night mode, Portrait mode, and 4K video at up to 60 fps</li>\r\n<li>12-megapixel TrueDepth front camera with Portrait mode, 4K video and slow motion</li>\r\n<li>Face ID for secure authentication and Apple Pay</li>\r\n</ul>', 12),
+(10, 'Samsung Galaxy A51 Black ', '599.00', '106', '1598375008_test1.png', '1598375008_yes.png', '<p><span style=\"color: #606060; font-family: Roboto, sans-serif; font-size: 14px; background-color: #ffffff;\">The A51 Infinity-O Display optimises visual symmetry. Now you can game, watch, surf, and multi-task without interruption on a 6.5 inch FHD+ wides', 10),
+(32, 'Samsung Galaxy S20+ Cloud Blue', '1699.00', '100', '1598375740_S1.png', '1598375740_S2.png', '<p><span style=\"color: #606060; font-family: Roboto, sans-serif; font-size: 14px; background-color: #ffffff;\">A massive leap forward in resolution and zoom for mobile photography.</span></p>', 10),
+(33, 'Samsung Galaxy S20 Cloud Pink', '1299.00', '100', '1598376084_S3.png', '1598376084_S4.png', '<p><span style=\"color: #606060; font-family: Roboto, sans-serif; font-size: 14px; background-color: #ffffff;\">A massive leap forward in resolution and zoom for mobile photography.</span></p>\r\n<ul class=\"tox-checklist\">\r\n<li><span style=\"color: #606060; fo', 10),
+(34, 'Samsung Galaxy S10', '1299.00', '100', '1598376568_S5.png', '1598376568_S6.png', '<p>&nbsp;</p>\r\n<p>The result of 10 years of pioneering mobile firsts <br />the next generation of Galaxy arrived.</p>\r\n<ul class=\"tox-checklist\">\r\n<li>6.1Dynamic AMOLED display</li>\r\n<li>2.7GHZ Octa core processor</li>\r\n<li>16 MP Ultra-Wide+ 12MP wid</li>', 10),
+(35, 'Samsung Galaxy Z Flip Mirror Purple', '2399.00', '100', '1598377280_S7.png', '1598377280_S8.png', '<p>&nbsp;</p>\r\n<p>Meet the full screen phone that folds to fit in your pocket</p>\r\n<ul class=\"tox-checklist\">\r\n<li>12MP Super speed Dual Pixel F1.8 Camera</li>\r\n<li>9W Wireless Charging with Wireless PowerShare</li>\r\n<li>6.7\"FHD=Dynamic AMOLED Display</li', 10),
+(36, 'Samsung Galaxy Note 20 Mystic Green', '1899.00', '100', '1598378187_S10.png', '1598378187_S9.png', '<p>Introducing the phone with the most versatile S Pen yet, PC-level performance, and Pro-grade 8K Video camera</p>\r\n<ul class=\"tox-checklist\">\r\n<li>12MP Ultra Wide + 12MP Wide + 6\'MP Telephoto Rear Cameras</li>\r\n<li>6.7\"FHD+ Super AMOLED</li>\r\n<li>Up to ', 10),
+(37, 'Apple iPhone 11', '1449.00', '100', '1598378925_I.png', '1598378925_I2.png', '<p>Shoot 4K video, beautiful portraits and sweeping landscapes with the all-new dual-camera system.</p>\r\n<ul class=\"tox-checklist\">\r\n<li>6.1-inch Liquid Retina HD LCD display</li>\r\n<li>Water and dust resistance (2 metres for up to 30 minutes, IP68)</li>\r\n<li>Dual-camera system with 12-megapixel Ultra Wide and Wide cameras; Night mode, Portrait mode, and 4K video at up to 60 fps</li>\r\n<li>12-megapixel TrueDepth front camera with Portrait mode, 4K video and slow motion</li>\r\n<li>Face ID for secure authentication and Apple Pay</li>\r\n<li>A13 Bionic chip with third-generation Neural Engine</li>\r\n<li>Fast-charge-capable</li>\r\n<li>Wireless charging4</li>\r\n</ul>', 12),
+(38, 'Apple iPhone 11 Pro Max Midnight Green', '1999.00', '100', '1598379685_I3.png', '1598379685_I4.png', '<p>Shoot 4K video, beautiful portraits and sweeping landscapes with the all-new dual-camera system.</p>\r\n<ul class=\"tox-checklist\">\r\n<li>6.1-inch Liquid Retina HD LCD display</li>\r\n<li>Water and dust resistance (2 metres for up to 30 minutes, IP68)</li>\r\n<li>Dual-camera system with 12-megapixel Ultra Wide and Wide cameras; Night mode, Portrait mode, and 4K video at up to 60 fps</li>\r\n<li>12-megapixel TrueDepth front camera with Portrait mode, 4K video and slow motion</li>\r\n<li>Face ID for secure authentication and Apple Pay</li>\r\n<li>A13 Bionic chip with third-generation Neural Engine</li>\r\n<li>Fast-charge-capable</li>\r\n<li>Wireless charging4</li>\r\n</ul>', 12),
+(39, 'Apple iPhone SE White', '1099.00', '100', '1598380113_I5.png', '1598380113_I6.png', '<p>Lots to love. Less to spend.</p>\r\n<ul class=\"tox-checklist\">\r\n<li>4.7-inch (diagonal) widescreen LCD</li>\r\n<li>12-megapixel Wide camera</li>\r\n<li>Portrait mode with advanced bokeh and Depth Control</li>\r\n<li>Water and dust resistance</li>\r\n<li>TouchID ', 12),
+(40, 'Apple iPhone 11 Yellow', '1349.00', '100', '1598380839_i7.png', '1598380839_I8.png', '<p>Shoot amazing videos and photos with the Ultra Wide, Wide and Telephoto cameras.&nbsp;</p>\r\n<ul class=\"tox-checklist\">\r\n<li>5.8-inch Super Retina XDR OLED display</li>\r\n<li>Water and dust resistance (4 metres for up to 30 minutes, IP68)</li>\r\n<li>Triple-camera system with 12-megapixel Ultra Wide, Wide and Telephoto cameras; Night mode, Portrait mode, and 4K video at up to 60 fps</li>\r\n<li>12-megapixel TrueDepth front camera with Portrait mode, 4K video and slow motion</li>\r\n<li>Face ID for secure authentication and Apple Pay</li>\r\n</ul>', 12),
 (41, 'Apple iPhone SE Black', '899.00', '100', '1598381725_I9.png', '1598381725_I10.png', '<div>\r\n<p>Lots to love. Less to spend.</p>\r\n<ul class=\"tox-checklist\">\r\n<li>Retina HD display</li>\r\n<li>4.7-inch (diagonal) widescreen LCD</li>\r\n<li>12-megapixel Wide camera</li>\r\n<li>Portrait mode with advanced bokeh and Depth Control</li>\r\n<li>TouchID</li>\r\n<li>Haptic Touch</li>\r\n<li>Rated IP67 Water and Dust Resistance</li>\r\n<li>Water and dust resistance (1 metre for up to 30 minutes, IP67). Battery life varies by use and configuration; see apple.com/au/batteries for more information.</li>\r\n</ul>\r\n</div>', 12),
-(42, 'Apple iPhone 11 Purple', '1.349', '100', '1598381876_I11.png', '1598381876_I12.png', '<p>Shoot 4K video, beautiful portraits and sweeping landscapes with the all-new dual-camera system.</p>\r\n<ul class=\"tox-checklist\">\r\n<li>6.1-inch Liquid Retina HD LCD display</li>\r\n<li>Water and dust resistance (2 metres for up to 30 minutes, IP68)</li>\r\n<li>Dual-camera system with 12-megapixel Ultra Wide and Wide cameras; Night mode, Portrait mode, and 4K video at up to 60 fps</li>\r\n<li>12-megapixel TrueDepth front camera with Portrait mode, 4K video and slow motion</li>\r\n<li>Face ID for secure authentication and Apple Pay</li>\r\n<li>A13 Bionic chip with third-generation Neural Engine</li>\r\n<li>Fast-charge-capable</li>\r\n<li>Wireless charging4</li>\r\n</ul>', 12),
-(43, 'Apple iPhone 11 Green', '1.349', '100', '1598382132_I13.png', '1598382132_I14.png', '<p>Shoot 4K video, beautiful portraits and sweeping landscapes with the all-new dual-camera system.</p>\r\n<ul class=\"tox-checklist\">\r\n<li>6.1-inch Liquid Retina HD LCD display</li>\r\n<li>Water and dust resistance (2 metres for up to 30 minutes, IP68)</li>\r\n<li>Dual-camera system with 12-megapixel Ultra Wide and Wide cameras; Night mode, Portrait mode, and 4K video at up to 60 fps</li>\r\n<li>12-megapixel TrueDepth front camera with Portrait mode, 4K video and slow motion</li>\r\n<li>Face ID for secure authentication and Apple Pay</li>\r\n<li>A13 Bionic chip with third-generation Neural Engine</li>\r\n<li>Fast-charge-capable</li>\r\n<li>Wireless charging4</li>\r\n</ul>', 12),
-(44, 'Samsung Galaxy Note 20 Ultra Mystic Black', '2.299', '100', '1598382678_S12.png', '1598382678_S13.png', '<div>\r\n<p>Introducing the phone forever changing how you work and play. With the most versatile S Pen yet, PC-level performance, and pro-grade 8K video camera.</p>\r\n</div>\r\n<ul class=\"tox-checklist\">\r\n<li>6.9&Prime; edge Quad HD+ Dynamic AMOLED 2X Infinity-O Display</li>\r\n<li>120Hz refresh rate</li>\r\n<li>12MP Ultra Wide + 108MP Wide + 12MP Telephoto Cameras with Laser AF Sensor</li>\r\n<li>10MP Selfie Camera</li>\r\n<li>Up to 50x Super Resolution Zoom</li>\r\n<li>8K video recording at 24fps (7680x4320)</li>\r\n<li>4500mAh Battery</li>\r\n</ul>', 10),
-(45, 'Samsung Galaxy S20 Ultra Cloud White', '1.799', '100', '1598382906_S15.png', '1598382906_S14.png', '<p>A massive leap forward in resolution and zoom for mobile photography.</p>\r\n<ul class=\"tox-checklist\">\r\n<li>6.9-inch Quad HD+ Dynamic AMOLED Infinity-O Display 120Hz display support</li>\r\n<li>Front camera: 40MP, PDAF, F2.2</li>\r\n<li>Rear camera: Ultra Wide: *12MP, Wide-angle: 108MP, Telephoto: 48MP</li>\r\n<li>DepthVision Camera and 100x Space Zoom</li>\r\n<li>Octa-Core Processor</li>\r\n<li>12GB RAM with 128GB internal storage (Expandable up to 1TB)</li>\r\n<li>5000mAh Battery</li>\r\n<li>Fast Wireless Charging 2.0</li>\r\n<li>5G Capable</li>\r\n</ul>', 10);
+(42, 'Apple iPhone 11 Purple', '1349.00', '100', '1598381876_I11.png', '1598381876_I12.png', '<p>Shoot 4K video, beautiful portraits and sweeping landscapes with the all-new dual-camera system.</p>\r\n<ul class=\"tox-checklist\">\r\n<li>6.1-inch Liquid Retina HD LCD display</li>\r\n<li>Water and dust resistance (2 metres for up to 30 minutes, IP68)</li>\r\n<li>Dual-camera system with 12-megapixel Ultra Wide and Wide cameras; Night mode, Portrait mode, and 4K video at up to 60 fps</li>\r\n<li>12-megapixel TrueDepth front camera with Portrait mode, 4K video and slow motion</li>\r\n<li>Face ID for secure authentication and Apple Pay</li>\r\n<li>A13 Bionic chip with third-generation Neural Engine</li>\r\n<li>Fast-charge-capable</li>\r\n<li>Wireless charging4</li>\r\n</ul>', 12),
+(43, 'Apple iPhone 11 Green', '1349.00', '100', '1598382132_I13.png', '1598382132_I14.png', '<p>Shoot 4K video, beautiful portraits and sweeping landscapes with the all-new dual-camera system.</p>\r\n<ul class=\"tox-checklist\">\r\n<li>6.1-inch Liquid Retina HD LCD display</li>\r\n<li>Water and dust resistance (2 metres for up to 30 minutes, IP68)</li>\r\n<li>Dual-camera system with 12-megapixel Ultra Wide and Wide cameras; Night mode, Portrait mode, and 4K video at up to 60 fps</li>\r\n<li>12-megapixel TrueDepth front camera with Portrait mode, 4K video and slow motion</li>\r\n<li>Face ID for secure authentication and Apple Pay</li>\r\n<li>A13 Bionic chip with third-generation Neural Engine</li>\r\n<li>Fast-charge-capable</li>\r\n<li>Wireless charging4</li>\r\n</ul>', 12),
+(44, 'Samsung Galaxy Note 20 Ultra Mystic Black', '2299.00', '100', '1598382678_S12.png', '1598382678_S13.png', '<div>\r\n<p>Introducing the phone forever changing how you work and play. With the most versatile S Pen yet, PC-level performance, and pro-grade 8K video camera.</p>\r\n</div>\r\n<ul class=\"tox-checklist\">\r\n<li>6.9&Prime; edge Quad HD+ Dynamic AMOLED 2X Infinity-O Display</li>\r\n<li>120Hz refresh rate</li>\r\n<li>12MP Ultra Wide + 108MP Wide + 12MP Telephoto Cameras with Laser AF Sensor</li>\r\n<li>10MP Selfie Camera</li>\r\n<li>Up to 50x Super Resolution Zoom</li>\r\n<li>8K video recording at 24fps (7680x4320)</li>\r\n<li>4500mAh Battery</li>\r\n</ul>', 10),
+(45, 'Samsung Galaxy S20 Ultra Cloud White', '1799.00', '100', '1598382906_S15.png', '1598382906_S14.png', '<p>A massive leap forward in resolution and zoom for mobile photography.</p>\r\n<ul class=\"tox-checklist\">\r\n<li>6.9-inch Quad HD+ Dynamic AMOLED Infinity-O Display 120Hz display support</li>\r\n<li>Front camera: 40MP, PDAF, F2.2</li>\r\n<li>Rear camera: Ultra Wide: *12MP, Wide-angle: 108MP, Telephoto: 48MP</li>\r\n<li>DepthVision Camera and 100x Space Zoom</li>\r\n<li>Octa-Core Processor</li>\r\n<li>12GB RAM with 128GB internal storage (Expandable up to 1TB)</li>\r\n<li>5000mAh Battery</li>\r\n<li>Fast Wireless Charging 2.0</li>\r\n<li>5G Capable</li>\r\n</ul>', 10),
+(49, 'TEST', '1200', '120', '1600441991_1599968579_gambas-ajillo-m.jpg', '1600441991_1599969315_Fideuá-del-señoret-o-señorito-525x360.jpg', '&lt;p&gt;TEST&lt;/p&gt;', 10);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `product_history`
+-- Table structure for table `product_history`
 --
 
 CREATE TABLE `product_history` (
@@ -389,33 +398,35 @@ CREATE TABLE `product_history` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `product_history`
+-- Dumping data for table `product_history`
 --
 
 INSERT INTO `product_history` (`idP`, `nameProduct`, `Price`, `Qte`, `Image`, `Image2`, `description`, `idC`) VALUES
 (9, 'T-SHIRT ORGANIC COTTON', '15.00', '80', '1597079329_product1.jpg', '1597079329_product1hover.jpg', '<p>T-shirt slim fit de m&eacute;lange de coton bio &agrave; col rond et manches courtes.</p>', 'men'),
 (10, 'Samsung Galaxy A51 Black ', '599.00', '108', '1598375008_test1.png', '1598375008_yes.png', '<p><span style=\"color: #606060; font-family: Roboto, sans-serif; font-size: 14px; background-color: #ffffff;\">The A51 Infinity-O Display optimises visual symmetry. Now you can game, watch, surf, and multi-task without interruption on a 6.5 inch FHD+ wides', '10'),
-(32, 'Samsung Galaxy S20+ Cloud Blue', '1.699', '100', '1598375740_S1.png', '1598375740_S2.png', '<p><span style=\"color: #606060; font-family: Roboto, sans-serif; font-size: 14px; background-color: #ffffff;\">A massive leap forward in resolution and zoom for mobile photography.</span></p>', '10'),
-(33, 'Samsung Galaxy S20 Cloud Pink', '1.299', '100', '1598376084_S3.png', '1598376084_S4.png', '<p><span style=\"color: #606060; font-family: Roboto, sans-serif; font-size: 14px; background-color: #ffffff;\">A massive leap forward in resolution and zoom for mobile photography.</span></p>\r\n<ul class=\"tox-checklist\">\r\n<li><span style=\"color: #606060; fo', '10'),
-(34, 'Samsung Galaxy S10', '1.299', '100', '1598376568_S5.png', '1598376568_S6.png', '<p>&nbsp;</p>\r\n<p>The result of 10 years of pioneering mobile firsts <br />the next generation of Galaxy arrived.</p>\r\n<ul class=\"tox-checklist\">\r\n<li>6.1Dynamic AMOLED display</li>\r\n<li>2.7GHZ Octa core processor</li>\r\n<li>16 MP Ultra-Wide+ 12MP wid</li>', '10'),
-(35, 'Samsung Galaxy Z Flip Mirror Purple', '2.399', '100', '1598377280_S7.png', '1598377280_S8.png', '<p>&nbsp;</p>\r\n<p>Meet the full screen phone that folds to fit in your pocket</p>\r\n<ul class=\"tox-checklist\">\r\n<li>12MP Super speed Dual Pixel F1.8 Camera</li>\r\n<li>9W Wireless Charging with Wireless PowerShare</li>\r\n<li>6.7\"FHD=Dynamic AMOLED Display</li', '10'),
-(36, 'Samsung Galaxy Note 20 Mystic Green', '1.899', '100', '1598378187_S10.png', '1598378187_S9.png', '<p>Introducing the phone with the most versatile S Pen yet, PC-level performance, and Pro-grade 8K Video camera</p>\r\n<ul class=\"tox-checklist\">\r\n<li>12MP Ultra Wide + 12MP Wide + 6\'MP Telephoto Rear Cameras</li>\r\n<li>6.7\"FHD+ Super AMOLED</li>\r\n<li>Up to ', '10'),
-(37, 'Apple iPhone 11', '1.449', '100', '1598378925_I.png', '1598378925_I2.png', '<p>Shoot 4K video, beautiful portraits and sweeping landscapes with the all-new dual-camera system.</p>\r\n<ul class=\"tox-checklist\">\r\n<li>6.1-inch Liquid Retina HD LCD display</li>\r\n<li>Water and dust resistance (2 metres for up to 30 minutes, IP68)</li>\r\n', '12'),
-(38, 'Apple iPhone 11 Pro Max Midnight Green', '1.999', '100', '1598379685_I3.png', '1598379685_I4.png', '<p>Shoot 4K video, beautiful portraits and sweeping landscapes with the all-new dual-camera system.</p>\r\n<ul class=\"tox-checklist\">\r\n<li>6.1-inch Liquid Retina HD LCD display</li>\r\n<li>Water and dust resistance (2 metres for up to 30 minutes, IP68)</li>\r\n', '12'),
-(39, 'Apple iPhone SE White', '1.099', '100', '1598380113_I5.png', '1598380113_I6.png', '<p>Lots to love. Less to spend.</p>\r\n<ul class=\"tox-checklist\">\r\n<li>4.7-inch (diagonal) widescreen LCD</li>\r\n<li>12-megapixel Wide camera</li>\r\n<li>Portrait mode with advanced bokeh and Depth Control</li>\r\n<li>Water and dust resistance</li>\r\n<li>TouchID ', '12'),
-(40, 'Apple iPhone 11 Yellow', '1.349', '100', '1598380839_i7.png', '1598380839_I8.png', '<p>Shoot amazing videos and photos with the Ultra Wide, Wide and Telephoto cameras.&nbsp;</p>\r\n<ul class=\"tox-checklist\">\r\n<li>5.8-inch Super Retina XDR OLED display</li>\r\n<li>Water and dust resistance (4 metres for up to 30 minutes, IP68)</li>\r\n<li>Tripl', '12'),
+(32, 'Samsung Galaxy S20+ Cloud Blue', '1699', '100', '1598375740_S1.png', '1598375740_S2.png', '<p><span style=\"color: #606060; font-family: Roboto, sans-serif; font-size: 14px; background-color: #ffffff;\">A massive leap forward in resolution and zoom for mobile photography.</span></p>', '10'),
+(33, 'Samsung Galaxy S20 Cloud Pink', '1299', '100', '1598376084_S3.png', '1598376084_S4.png', '<p><span style=\"color: #606060; font-family: Roboto, sans-serif; font-size: 14px; background-color: #ffffff;\">A massive leap forward in resolution and zoom for mobile photography.</span></p>\r\n<ul class=\"tox-checklist\">\r\n<li><span style=\"color: #606060; fo', '10'),
+(34, 'Samsung Galaxy S10', '1299', '100', '1598376568_S5.png', '1598376568_S6.png', '<p>&nbsp;</p>\r\n<p>The result of 10 years of pioneering mobile firsts <br />the next generation of Galaxy arrived.</p>\r\n<ul class=\"tox-checklist\">\r\n<li>6.1Dynamic AMOLED display</li>\r\n<li>2.7GHZ Octa core processor</li>\r\n<li>16 MP Ultra-Wide+ 12MP wid</li>', '10'),
+(35, 'Samsung Galaxy Z Flip Mirror Purple', '2399', '100', '1598377280_S7.png', '1598377280_S8.png', '<p>&nbsp;</p>\r\n<p>Meet the full screen phone that folds to fit in your pocket</p>\r\n<ul class=\"tox-checklist\">\r\n<li>12MP Super speed Dual Pixel F1.8 Camera</li>\r\n<li>9W Wireless Charging with Wireless PowerShare</li>\r\n<li>6.7\"FHD=Dynamic AMOLED Display</li', '10'),
+(36, 'Samsung Galaxy Note 20 Mystic Green', '1899', '100', '1598378187_S10.png', '1598378187_S9.png', '<p>Introducing the phone with the most versatile S Pen yet, PC-level performance, and Pro-grade 8K Video camera</p>\r\n<ul class=\"tox-checklist\">\r\n<li>12MP Ultra Wide + 12MP Wide + 6\'MP Telephoto Rear Cameras</li>\r\n<li>6.7\"FHD+ Super AMOLED</li>\r\n<li>Up to ', '10'),
+(37, 'Apple iPhone 11', '1449', '100', '1598378925_I.png', '1598378925_I2.png', '<p>Shoot 4K video, beautiful portraits and sweeping landscapes with the all-new dual-camera system.</p>\r\n<ul class=\"tox-checklist\">\r\n<li>6.1-inch Liquid Retina HD LCD display</li>\r\n<li>Water and dust resistance (2 metres for up to 30 minutes, IP68)</li>\r\n', '12'),
+(38, 'Apple iPhone 11 Pro Max Midnight Green', '1999', '100', '1598379685_I3.png', '1598379685_I4.png', '<p>Shoot 4K video, beautiful portraits and sweeping landscapes with the all-new dual-camera system.</p>\r\n<ul class=\"tox-checklist\">\r\n<li>6.1-inch Liquid Retina HD LCD display</li>\r\n<li>Water and dust resistance (2 metres for up to 30 minutes, IP68)</li>\r\n', '12'),
+(39, 'Apple iPhone SE White', '1099', '100', '1598380113_I5.png', '1598380113_I6.png', '<p>Lots to love. Less to spend.</p>\r\n<ul class=\"tox-checklist\">\r\n<li>4.7-inch (diagonal) widescreen LCD</li>\r\n<li>12-megapixel Wide camera</li>\r\n<li>Portrait mode with advanced bokeh and Depth Control</li>\r\n<li>Water and dust resistance</li>\r\n<li>TouchID ', '12'),
+(40, 'Apple iPhone 11 Yellow', '1349', '100', '1598380839_i7.png', '1598380839_I8.png', '<p>Shoot amazing videos and photos with the Ultra Wide, Wide and Telephoto cameras.&nbsp;</p>\r\n<ul class=\"tox-checklist\">\r\n<li>5.8-inch Super Retina XDR OLED display</li>\r\n<li>Water and dust resistance (4 metres for up to 30 minutes, IP68)</li>\r\n<li>Tripl', '12'),
 (41, 'Apple iPhone SE Black', '899.00', '100', '1598381725_I9.png', '1598381725_I10.png', '<div>\r\n<p>Lots to love. Less to spend.</p>\r\n<ul class=\"tox-checklist\">\r\n<li>Retina HD display</li>\r\n<li>4.7-inch (diagonal) widescreen LCD</li>\r\n<li>12-megapixel Wide camera</li>\r\n<li>Portrait mode with advanced bokeh and Depth Control</li>\r\n<li>TouchID</', '12'),
-(42, 'Apple iPhone 11 Purple', '1.349', '100', '1598381876_I11.png', '1598381876_I12.png', '<p>Shoot 4K video, beautiful portraits and sweeping landscapes with the all-new dual-camera system.</p>\r\n<ul class=\"tox-checklist\">\r\n<li>6.1-inch Liquid Retina HD LCD display</li>\r\n<li>Water and dust resistance (2 metres for up to 30 minutes, IP68)</li>\r\n', '12'),
-(43, 'Apple iPhone 11 Green', '1.349', '100', '1598382132_I13.png', '1598382132_I14.png', '<p>Shoot 4K video, beautiful portraits and sweeping landscapes with the all-new dual-camera system.</p>\r\n<ul class=\"tox-checklist\">\r\n<li>6.1-inch Liquid Retina HD LCD display</li>\r\n<li>Water and dust resistance (2 metres for up to 30 minutes, IP68)</li>\r\n', '12'),
-(44, 'Samsung Galaxy Note 20 Ultra Mystic Black', '2.299', '100', '1598382678_S12.png', '1598382678_S13.png', '<div>\r\n<p>Introducing the phone forever changing how you work and play. With the most versatile S Pen yet, PC-level performance, and pro-grade 8K video camera.</p>\r\n</div>\r\n<ul class=\"tox-checklist\">\r\n<li>6.9&Prime; edge Quad HD+ Dynamic AMOLED 2X Infinit', '10'),
-(45, 'Samsung Galaxy S20 Ultra Cloud White', '1.799', '100', '1598382906_S15.png', '1598382906_S14.png', '<p>A massive leap forward in resolution and zoom for mobile photography.</p>\r\n<ul class=\"tox-checklist\">\r\n<li>6.9-inch Quad HD+ Dynamic AMOLED Infinity-O Display 120Hz display support</li>\r\n<li>Front camera: 40MP, PDAF, F2.2</li>\r\n<li>Rear camera: Ultra W', '10'),
-(46, 'Nike', '34.99', '21', '1597253926_download.jpeg', '1597253926_images.jpeg', '<ul class=\"tox-checklist\">\r\n<li>NIKE ORIGINAL</li>\r\n</ul>', '12'),
-(47, 'Nike', '232', '23', '1598619427_1594745462_4087400649_2_1_1-1-300x300.jpg', '1598619427_1594834162_4017650420_2_1_1-300x300.jpg', '&lt;p&gt;RS&lt;/p&gt;', 'Samsung');
+(42, 'Apple iPhone 11 Purple', '1349', '100', '1598381876_I11.png', '1598381876_I12.png', '<p>Shoot 4K video, beautiful portraits and sweeping landscapes with the all-new dual-camera system.</p>\r\n<ul class=\"tox-checklist\">\r\n<li>6.1-inch Liquid Retina HD LCD display</li>\r\n<li>Water and dust resistance (2 metres for up to 30 minutes, IP68)</li>\r\n', '12'),
+(43, 'Apple iPhone 11 Green', '1349', '100', '1598382132_I13.png', '1598382132_I14.png', '<p>Shoot 4K video, beautiful portraits and sweeping landscapes with the all-new dual-camera system.</p>\r\n<ul class=\"tox-checklist\">\r\n<li>6.1-inch Liquid Retina HD LCD display</li>\r\n<li>Water and dust resistance (2 metres for up to 30 minutes, IP68)</li>\r\n', '12'),
+(44, 'Samsung Galaxy Note 20 Ultra Mystic Black', '2299', '100', '1598382678_S12.png', '1598382678_S13.png', '<div>\r\n<p>Introducing the phone forever changing how you work and play. With the most versatile S Pen yet, PC-level performance, and pro-grade 8K video camera.</p>\r\n</div>\r\n<ul class=\"tox-checklist\">\r\n<li>6.9&Prime; edge Quad HD+ Dynamic AMOLED 2X Infinit', '10'),
+(45, 'Samsung Galaxy S20 Ultra Cloud White', '1799', '100', '1598382906_S15.png', '1598382906_S14.png', '<p>A massive leap forward in resolution and zoom for mobile photography.</p>\r\n<ul class=\"tox-checklist\">\r\n<li>6.9-inch Quad HD+ Dynamic AMOLED Infinity-O Display 120Hz display support</li>\r\n<li>Front camera: 40MP, PDAF, F2.2</li>\r\n<li>Rear camera: Ultra W', '10'),
+(46, 'Nike', '3499', '21', '1597253926_download.jpeg', '1597253926_images.jpeg', '<ul class=\"tox-checklist\">\r\n<li>NIKE ORIGINAL</li>\r\n</ul>', '12'),
+(47, 'Nike', '232', '23', '1598619427_1594745462_4087400649_2_1_1-1-300x300.jpg', '1598619427_1594834162_4017650420_2_1_1-300x300.jpg', '&lt;p&gt;RS&lt;/p&gt;', 'Samsung'),
+(48, 'TEST', '12', '132', '1600363691_TT.PNG', '1600363691_TT.PNG', '&lt;p&gt;TEST&lt;/p&gt;', 'Samsung'),
+(49, 'TEST', '1200', '120', '1600441991_1599968579_gambas-ajillo-m.jpg', '1600441991_1599969315_Fideuá-del-señoret-o-señorito-525x360.jpg', '&lt;p&gt;TEST&lt;/p&gt;', 'Samsung');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `size`
+-- Table structure for table `size`
 --
 
 CREATE TABLE `size` (
@@ -424,7 +435,7 @@ CREATE TABLE `size` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `size`
+-- Dumping data for table `size`
 --
 
 INSERT INTO `size` (`idSize`, `nameSize`) VALUES
@@ -437,7 +448,7 @@ INSERT INTO `size` (`idSize`, `nameSize`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `size_product`
+-- Table structure for table `size_product`
 --
 
 CREATE TABLE `size_product` (
@@ -447,7 +458,7 @@ CREATE TABLE `size_product` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `size_product`
+-- Dumping data for table `size_product`
 --
 
 INSERT INTO `size_product` (`idPS`, `idP`, `idSize`) VALUES
@@ -528,7 +539,7 @@ INSERT INTO `size_product` (`idPS`, `idP`, `idSize`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -543,37 +554,21 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `users`
+-- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`idU`, `fullname`, `email`, `password`, `phone_number`, `admin`, `superAdmin`, `ban`) VALUES
 (5, 'gitsalah', 'test', '0646274243', '064664872', 1, 1, 0),
-(6, 'SALAHEDDINE BOUANBAS', 'salah.bouanba2@gmail.com', '$2y$10$ug01GLIO0IDeQf3KBdy4Be.fyHLmucV80Ccs0axqIz5PI.GehaxMa', '0661263709', 0, 0, 0),
-(7, 'test', 'hello@hello.com', '$2y$10$03XQMZrLQCfXMY6yia312.336DEjWm8NwSl32nucbQSDEkhGVLgfu', '0636382012', 0, 0, 0),
-(11, 'mariem', 'mariem@eshop.com', '0646274243', '0646274243', 1, 0, 0),
-(12, 'Hamza', 'hamza@gmail.com', '$2y$10$03XQMZrLQCfXMY6yia312.336DEjWm8NwSl32nucbQSDEkhGVLgfu', '0646275253', 0, 0, 0),
-(13, 'mohamed', 'simo@gmail.com', '$2y$10$LiUhl5mr5x9jVS7YCLaUDe./tV33Y8S1WmT3LiGvEBfZhpr0igEnu', '0649118803', 0, 0, 0),
-(14, 'simoo', 'simoo@gmail.com', '$2y$10$NG.cNPGxERT58pS/iQngTe4x0E0s4SqCE/fx9zU.GYKJzEj1LOowa', '0646274243', 0, 0, 0),
-(15, 'yousef', 'youssef@gmail.com', '$2y$10$trA8VlRBGND9xFPEHn4xLOOYQ1h7KYgu/P1xWD6PwuKiqlQht9mJa', '0646274243', 0, 0, 0),
-(16, 'SALAHEDDINE ', 'salah@salah.me', '$2y$10$m4AKaw9qhEG8v9d43DuxWeSFnKGSV9ti5hcE35THfxTX8vKwfa3WG', '0646274243', 0, 0, 0),
-(17, 'salaheddine', 'gh@gh.com', '$2y$10$MJRFQiY0aL5nlrngFqSdh.IJVGwEHpPilOpZFLf2XHqOKOhbgjB/.', '0646274243', 0, 0, 0),
-(18, 'imane', 'imane@gmail.com', '$2y$10$Cj5saRh2cuir1ClcsqqsOOa2DnuTNm/N.FG2QcMrfnHYJmOnGuBu.', '12356', 0, 0, 0),
-(19, 'test', 'test@gmail.com', '$2y$10$4VJ74oOx4uNpoUva/y7Ky.kexVNJLgwppYmFef27mowlVzEdVS5OO', '12356', 0, 0, 0),
-(20, 'Mariemff', 'mariem@gmail.com', '$2y$10$Xq6J5AWrStSjPBmolA7QruO3dNc2l/V9zg2UwmuUrRQeUlyPm1nta', '12356', 0, 0, 0),
-(21, 'jade smith', 'test@smith.com', '$2y$10$GWlKBXv6n5TadPcEljM9WeXlTTW4wD36c6bBPYxPikZydy5ql9Ebe', '+212649118803', 0, 0, 0),
-(22, 'SALAHEDDINE BOUANBA', 'salahbouanba14@gmail.com', '$2y$10$t4i5/LrRd7iOmJ21azjrBew71dyCAFsV3P5OHK0/OS3loPlG0w/F.', '0649118803', 0, 0, 0),
-(23, 'SALAHEDDINE BOUANBA', 'salahbouanba2@gmail.com', '$2y$10$GEQesSXO6er1fyb9MhcZBuN87NSL0ApYrqksV6K9y7IcRCPGqNWBK', '+212649118803', 0, 0, 0),
-(24, 'okmk k', 'mariem1111@gmail.com', '$2y$10$ctL5RWkLBcOJsPy7/jGRQ.8ybHroPYhIRfPZhXNz9w5cL499iRxNe', '06543245', 0, 0, 0),
-(25, 'Ziad ', 'Ziad@gmail.com', '$2y$10$XGMYQwL8qhX6S01A0o2YWetcmobMPXmS4KzuygDX0HpecFgywP0z6', '765457', 0, 0, 0),
-(26, 'new user', 'user@gmail.com', '$2y$10$Cnp6NfrrSYTaNE57kLaYH.z9nybxry.cGnQ.9d99bmi6P0/9LB9/a', '0646274243', 0, 0, 0),
-(27, 'okmk k', 'mariemSALAH@gmail.com', '$2y$10$G/BjfYEAe3KbgJwYg9k.3OWNsyGYl.8Kezo0r9X/RR8q46thzZvF.', '0644569834', 0, 0, 0);
+(29, 'SALAHEDDINE BOUANBA', 'salah.bouanba2@gmail.com', '$2y$10$DS95aBrog6E3xkhVUJf2QuAw3lGKTwxJzaJWwUQmQBJehjShCT0/m', '0646628111', 0, 0, 0),
+(30, 'SALAHEDDINE BOUANBA', 'bouanbasalah@gmail.com', '$2y$10$dxNRBx8M5G7RmK.H2LOKzOsrp8e/bCl9PvnvYm4JcDUHXK3lsXbAm', '0646274243', 0, 0, 0),
+(31, 'salaheddine bouanba', 'gitshopllc@gmail.com', '$2y$10$VSYlR5nlxvney2yOlMuYLOmJ.Eu7UHrBM08QbAVQl34a53on/V1H2', '0646274243', 0, 0, 0);
 
 --
--- Index pour les tables déchargées
+-- Indexes for dumped tables
 --
 
 --
--- Index pour la table `cart`
+-- Indexes for table `cart`
 --
 ALTER TABLE `cart`
   ADD PRIMARY KEY (`idCart`),
@@ -582,26 +577,26 @@ ALTER TABLE `cart`
   ADD KEY `fk_idSizeCart` (`idSize`);
 
 --
--- Index pour la table `category`
+-- Indexes for table `category`
 --
 ALTER TABLE `category`
   ADD PRIMARY KEY (`idC`);
 
 --
--- Index pour la table `mirrormx_customer_chat_data`
+-- Indexes for table `mirrormx_customer_chat_data`
 --
 ALTER TABLE `mirrormx_customer_chat_data`
   ADD PRIMARY KEY (`id`),
   ADD KEY `data_type_ix` (`type`);
 
 --
--- Index pour la table `mirrormx_customer_chat_department`
+-- Indexes for table `mirrormx_customer_chat_department`
 --
 ALTER TABLE `mirrormx_customer_chat_department`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `mirrormx_customer_chat_message`
+-- Indexes for table `mirrormx_customer_chat_message`
 --
 ALTER TABLE `mirrormx_customer_chat_message`
   ADD PRIMARY KEY (`id`),
@@ -611,14 +606,14 @@ ALTER TABLE `mirrormx_customer_chat_message`
   ADD KEY `message_datetime_ix` (`datetime`);
 
 --
--- Index pour la table `mirrormx_customer_chat_shared_file`
+-- Indexes for table `mirrormx_customer_chat_shared_file`
 --
 ALTER TABLE `mirrormx_customer_chat_shared_file`
   ADD PRIMARY KEY (`id`),
   ADD KEY `shared_file_fk_upload` (`upload_id`);
 
 --
--- Index pour la table `mirrormx_customer_chat_talk`
+-- Indexes for table `mirrormx_customer_chat_talk`
 --
 ALTER TABLE `mirrormx_customer_chat_talk`
   ADD PRIMARY KEY (`id`),
@@ -627,14 +622,14 @@ ALTER TABLE `mirrormx_customer_chat_talk`
   ADD KEY `talk_last_activity_ix` (`last_activity`);
 
 --
--- Index pour la table `mirrormx_customer_chat_upload`
+-- Indexes for table `mirrormx_customer_chat_upload`
 --
 ALTER TABLE `mirrormx_customer_chat_upload`
   ADD PRIMARY KEY (`id`),
   ADD KEY `upload_fk_message` (`message_id`);
 
 --
--- Index pour la table `mirrormx_customer_chat_user`
+-- Indexes for table `mirrormx_customer_chat_user`
 --
 ALTER TABLE `mirrormx_customer_chat_user`
   ADD PRIMARY KEY (`id`),
@@ -642,14 +637,14 @@ ALTER TABLE `mirrormx_customer_chat_user`
   ADD KEY `user_last_activity_ix` (`last_activity`);
 
 --
--- Index pour la table `mirrormx_customer_chat_user_department`
+-- Indexes for table `mirrormx_customer_chat_user_department`
 --
 ALTER TABLE `mirrormx_customer_chat_user_department`
   ADD UNIQUE KEY `user_department_uq` (`user_id`,`department_id`),
   ADD KEY `user_department_fk_department` (`department_id`);
 
 --
--- Index pour la table `orders`
+-- Indexes for table `orders`
 --
 ALTER TABLE `orders`
   ADD PRIMARY KEY (`idOrder`),
@@ -657,33 +652,33 @@ ALTER TABLE `orders`
   ADD KEY `FK_IDPRODUCT` (`idP`);
 
 --
--- Index pour la table `password_reset`
+-- Indexes for table `password_reset`
 --
 ALTER TABLE `password_reset`
   ADD PRIMARY KEY (`idReset`),
   ADD KEY `FK_PASSWORD` (`idU`);
 
 --
--- Index pour la table `product`
+-- Indexes for table `product`
 --
 ALTER TABLE `product`
   ADD PRIMARY KEY (`idP`),
   ADD KEY `FK_Categorie` (`idC`);
 
 --
--- Index pour la table `product_history`
+-- Indexes for table `product_history`
 --
 ALTER TABLE `product_history`
   ADD PRIMARY KEY (`idP`);
 
 --
--- Index pour la table `size`
+-- Indexes for table `size`
 --
 ALTER TABLE `size`
   ADD PRIMARY KEY (`idSize`);
 
 --
--- Index pour la table `size_product`
+-- Indexes for table `size_product`
 --
 ALTER TABLE `size_product`
   ADD PRIMARY KEY (`idPS`),
@@ -691,117 +686,117 @@ ALTER TABLE `size_product`
   ADD KEY `fk_addSizeproduct` (`idSize`);
 
 --
--- Index pour la table `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`idU`);
 
 --
--- AUTO_INCREMENT pour les tables déchargées
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT pour la table `cart`
+-- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `idCart` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99;
+  MODIFY `idCart` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=132;
 
 --
--- AUTO_INCREMENT pour la table `category`
+-- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `idC` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `idC` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
--- AUTO_INCREMENT pour la table `mirrormx_customer_chat_data`
+-- AUTO_INCREMENT for table `mirrormx_customer_chat_data`
 --
 ALTER TABLE `mirrormx_customer_chat_data`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `mirrormx_customer_chat_department`
+-- AUTO_INCREMENT for table `mirrormx_customer_chat_department`
 --
 ALTER TABLE `mirrormx_customer_chat_department`
   MODIFY `id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT pour la table `mirrormx_customer_chat_message`
+-- AUTO_INCREMENT for table `mirrormx_customer_chat_message`
 --
 ALTER TABLE `mirrormx_customer_chat_message`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
--- AUTO_INCREMENT pour la table `mirrormx_customer_chat_shared_file`
+-- AUTO_INCREMENT for table `mirrormx_customer_chat_shared_file`
 --
 ALTER TABLE `mirrormx_customer_chat_shared_file`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT pour la table `mirrormx_customer_chat_talk`
+-- AUTO_INCREMENT for table `mirrormx_customer_chat_talk`
 --
 ALTER TABLE `mirrormx_customer_chat_talk`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT pour la table `mirrormx_customer_chat_upload`
+-- AUTO_INCREMENT for table `mirrormx_customer_chat_upload`
 --
 ALTER TABLE `mirrormx_customer_chat_upload`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT pour la table `mirrormx_customer_chat_user`
+-- AUTO_INCREMENT for table `mirrormx_customer_chat_user`
 --
 ALTER TABLE `mirrormx_customer_chat_user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT pour la table `orders`
+-- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `idOrder` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
+  MODIFY `idOrder` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
 
 --
--- AUTO_INCREMENT pour la table `password_reset`
+-- AUTO_INCREMENT for table `password_reset`
 --
 ALTER TABLE `password_reset`
   MODIFY `idReset` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
--- AUTO_INCREMENT pour la table `product`
+-- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `idP` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `idP` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
--- AUTO_INCREMENT pour la table `product_history`
+-- AUTO_INCREMENT for table `product_history`
 --
 ALTER TABLE `product_history`
-  MODIFY `idP` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `idP` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
--- AUTO_INCREMENT pour la table `size`
+-- AUTO_INCREMENT for table `size`
 --
 ALTER TABLE `size`
-  MODIFY `idSize` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `idSize` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
--- AUTO_INCREMENT pour la table `size_product`
+-- AUTO_INCREMENT for table `size_product`
 --
 ALTER TABLE `size_product`
   MODIFY `idPS` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=197;
 
 --
--- AUTO_INCREMENT pour la table `users`
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `idU` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `idU` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
--- Contraintes pour les tables déchargées
+-- Constraints for dumped tables
 --
 
 --
--- Contraintes pour la table `cart`
+-- Constraints for table `cart`
 --
 ALTER TABLE `cart`
   ADD CONSTRAINT `fk_idSizeCart` FOREIGN KEY (`idSize`) REFERENCES `size` (`idSize`),
@@ -809,57 +804,57 @@ ALTER TABLE `cart`
   ADD CONSTRAINT `fk_users` FOREIGN KEY (`idU`) REFERENCES `users` (`idU`);
 
 --
--- Contraintes pour la table `mirrormx_customer_chat_message`
+-- Constraints for table `mirrormx_customer_chat_message`
 --
 ALTER TABLE `mirrormx_customer_chat_message`
   ADD CONSTRAINT `message_fk_talk` FOREIGN KEY (`talk_id`) REFERENCES `mirrormx_customer_chat_talk` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Contraintes pour la table `mirrormx_customer_chat_shared_file`
+-- Constraints for table `mirrormx_customer_chat_shared_file`
 --
 ALTER TABLE `mirrormx_customer_chat_shared_file`
   ADD CONSTRAINT `shared_file_fk_upload` FOREIGN KEY (`upload_id`) REFERENCES `mirrormx_customer_chat_upload` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Contraintes pour la table `mirrormx_customer_chat_talk`
+-- Constraints for table `mirrormx_customer_chat_talk`
 --
 ALTER TABLE `mirrormx_customer_chat_talk`
   ADD CONSTRAINT `talk_fk_department` FOREIGN KEY (`department_id`) REFERENCES `mirrormx_customer_chat_department` (`id`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 --
--- Contraintes pour la table `mirrormx_customer_chat_upload`
+-- Constraints for table `mirrormx_customer_chat_upload`
 --
 ALTER TABLE `mirrormx_customer_chat_upload`
   ADD CONSTRAINT `upload_fk_message` FOREIGN KEY (`message_id`) REFERENCES `mirrormx_customer_chat_message` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Contraintes pour la table `mirrormx_customer_chat_user_department`
+-- Constraints for table `mirrormx_customer_chat_user_department`
 --
 ALTER TABLE `mirrormx_customer_chat_user_department`
   ADD CONSTRAINT `user_department_fk_department` FOREIGN KEY (`department_id`) REFERENCES `mirrormx_customer_chat_department` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `user_department_fk_user` FOREIGN KEY (`user_id`) REFERENCES `mirrormx_customer_chat_user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Contraintes pour la table `orders`
+-- Constraints for table `orders`
 --
 ALTER TABLE `orders`
   ADD CONSTRAINT `FK_IDPRODUCT` FOREIGN KEY (`idP`) REFERENCES `product_history` (`idP`),
   ADD CONSTRAINT `fk_user_order` FOREIGN KEY (`idU`) REFERENCES `users` (`idU`);
 
 --
--- Contraintes pour la table `password_reset`
+-- Constraints for table `password_reset`
 --
 ALTER TABLE `password_reset`
   ADD CONSTRAINT `FK_PASSWORD` FOREIGN KEY (`idU`) REFERENCES `users` (`idU`);
 
 --
--- Contraintes pour la table `product`
+-- Constraints for table `product`
 --
 ALTER TABLE `product`
   ADD CONSTRAINT `FK_Categorie` FOREIGN KEY (`idC`) REFERENCES `category` (`idC`);
 
 --
--- Contraintes pour la table `size_product`
+-- Constraints for table `size_product`
 --
 ALTER TABLE `size_product`
   ADD CONSTRAINT `fk_addSizeproduct` FOREIGN KEY (`idSize`) REFERENCES `size` (`idSize`),
